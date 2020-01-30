@@ -5,13 +5,26 @@ var serial = {
           successCallback = opts;
           opts = {};
         }
-        cordova.exec(
-            successCallback,
-            errorCallback,
-            'Serial',
-            'requestPermission',
-            [{'opts': opts}]
-        );
+        cordovarduino.prototype.requestPermission = function(opts, successCallback, errorCallback) {
+    alert('Entering the request Permission action!');
+    cordova.exec( successCallback,
+        errorCallback,
+        'Serial',
+        'requestPermission',
+        [{'opts': opts}]
+    );
+    alert('After the request Permission action!');
+}
+
+cordovarduino.install = function() {
+    if (!window.plugins) {
+        window.plugins = {};
+    }
+    window.plugins.cordovarduino = new cordovarduino();
+    return window.plugins.cordovarduino;
+};
+
+cordova.addConstructor(cordovarduino.install);
     },
     open: function(opts, successCallback, errorCallback) {
         cordova.exec(

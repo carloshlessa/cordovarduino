@@ -5,13 +5,12 @@
   "cordova": {
     "id": "cordovarduino",
     "platforms": [
-      "android",
-      "ubuntu"
+      "android"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xseignard/cordovarduino.git"
+    "url": "git+https://github.com/carloshlessa/cordovarduino.git"
   },
   "keywords": [
     "serial",
